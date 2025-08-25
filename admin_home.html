@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — {{ BRAND_NAME }}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50">
+  <div class="max-w-5xl mx-auto p-6">
+    <header class="flex items-center justify-between">
+      <h1 class="text-2xl font-bold">Panel Admin — {{ BRAND_NAME }}</h1>
+      <a class="px-3 py-1" href="{{ url_for('logout') }}">Salir</a>
+    </header>
+    <section class="mt-6 grid md:grid-cols-3 gap-4">
+      <div class="bg-white p-4 rounded-xl shadow">Usuarios: <strong>{{ users_count }}</strong></div>
+      <div class="bg-white p-4 rounded-xl shadow">Depósitos pendientes: <strong>{{ dep_pend }}</strong></div>
+      <div class="bg-white p-4 rounded-xl shadow">Retiros pendientes: <strong>{{ w_pend }}</strong></div>
+    </section>
+    <form class="mt-6" action="{{ url_for('admin_force_interest') }}" method="post" onsubmit="return confirm('¿Aplicar intereses a todos los usuarios activos?');">
+      <button class="px-4 py-2 bg-emerald-600 text-white rounded-lg">⚡ Forzar intereses</button>
+    </form>
+    <div class="mt-6 space-x-3">
+      <a class="px-3 py-1 border rounded" href="{{ url_for('admin_users') }}">Usuarios</a>
+      <a class="px-3 py-1 border rounded" href="{{ url_for('admin_deposits') }}">Depósitos</a>
+      <a class="px-3 py-1 border rounded" href="{{ url_for('admin_withdrawals') }}">Retiros</a>
+    </div>
+  </div>
+</body></html>

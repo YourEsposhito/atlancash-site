@@ -1,0 +1,5 @@
+git init
+git remote add origin https://github.com/TU_USUARIO/atlancash-site.git
+git add .
+git commit -m "Atlancash web inicial"
+git push -u origin master

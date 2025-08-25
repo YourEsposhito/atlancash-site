@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ BRAND_NAME }} — Inversiones con interés diario</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <div class="max-w-4xl mx-auto p-6">
+    <header class="flex items-center justify-between">
+      <h1 class="text-3xl font-bold">{{ BRAND_NAME }}</h1>
+      <nav class="space-x-3">
+        <a class="px-4 py-2 bg-slate-900 text-white rounded-lg" href="{{ url_for('login') }}">Entrar</a>
+        <a class="px-4 py-2 border rounded-lg" href="{{ url_for('admin_login') }}">Admin</a>
+      </nav>
+    </header>
+
+    <section class="mt-12 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-2xl font-semibold mb-2">Gana intereses diarios</h2>
+        <p class="mb-4">Administra tus recargas y retiros de forma simple desde el panel web y el bot. Todo conectado a tu misma cuenta.</p>
+        <ul class="list-disc ml-5 space-y-1">
+          <li>Historial de intereses</li>
+          <li>Solicitar recargas y retiros</li>
+          <li>Panel admin para aprobar/rechazar</li>
+        </ul>
+        <a class="mt-6 inline-block px-5 py-2 bg-emerald-600 text-white rounded-lg" href="{{ url_for('login') }}">Ir al panel</a>
+      </div>
+      <img class="w-full rounded-xl shadow" src="https://images.unsplash.com/photo-1553729784-e91953dec042?q=80&w=1200&auto=format&fit=crop" alt="finance">
+    </section>
+
+    <footer class="mt-16 text-sm text-slate-500">
+      Soporte: {{ SUPPORT_TELEGRAM }}
+    </footer>
+  </div>
+</body>
+</html>
